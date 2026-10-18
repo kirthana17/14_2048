@@ -1,2 +1,0 @@
-2048 Project Repository:
-https://github.com/kirthana17/14_2048
