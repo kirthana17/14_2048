@@ -78,7 +78,7 @@ The submission includes:
 
 ```text
 scenario-14-2048/
-        |    videos/
+        |__ videos/
         │   ├── before.mp4
         │   └── after.mp4
         ├── source-code/
