@@ -3,9 +3,10 @@ from board import Board
 
 class Game:
     def __init__(self):
-        self.board = Board()
-        self.best_score = 0
-        self.history = []
+       self.board = Board()
+       self.best_score = 0
+       self.history = []
+       self.won = False
 
     def display(self):
         print("\n" + "+------+------+------+------+")
@@ -28,9 +29,10 @@ class Game:
         print("2048 — W/A/S/D to move, U to undo, Q to quit.")
         while True:
             self.display()
-            if any(2048 in row for row in self.board.grid):
-                print("You reached 2048!")
-                return
+            if any(value >= 2048 for row in self.board.grid for value in row):
+             self.won = True
+             print("You reached 2048!")
+             return
             if not self.board.can_move():
                 print("No legal moves remain.")
                 return
