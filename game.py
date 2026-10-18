@@ -17,6 +17,7 @@ class Game:
             print("+------+------+------+------+")
         print("Score:", self.board.score, " Best:", self.best_score)
 
+
     def move(self, key):
         moves = {
             "a": self.board.move_left,
@@ -26,19 +27,29 @@ class Game:
         }
 
         if key not in moves:
+            print("Invalid input. Use W/A/S/D.")
             return False
 
-        old_grid = copy.deepcopy(self.board.grid)
+        old_grid = [row[:] for row in self.board.grid]
         old_score = self.board.score
+
         changed = moves[key]()
 
-        if changed:
-            self.history.append((old_grid, old_score))
-            self.board.add_random_tile()
-            self.best_score = max(self.best_score, self.board.score)
-            return True
+        if not changed:
+            print("Move did not change the board.")
+            return False
 
-        return False
+        self.history.append((old_grid, old_score))
+        self.board.add_random_tile()
+        self.best_score = max(self.best_score, self.board.score)
+
+        if self.board.score > old_score:
+            print(f"Successful move! You earned {self.board.score - old_score} points from merges.")
+        else:
+            print("Move successful.")
+
+        return True
+
 
     def undo(self):
         if not self.history:
