@@ -88,5 +88,4 @@ scenario-14-2048/
         │   └── requirements.txt
         ├── Chat_History.pdf
         ├── README.md
-        └── GitHub_Link.txt
 ```
