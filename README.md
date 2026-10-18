@@ -64,7 +64,6 @@ The complete ChatGPT conversation used during development is available here:
 
 **[View the complete ChatGPT conversation](https://chatgpt.com/g/g-p-6ad4c9b6b5e4819192bae30f8967aa5e-se-lab4/project)**
 
-Replace `PASTE_YOUR_SHARE_LINK_HERE` with the actual ChatGPT share URL before submitting. The link should open the shared conversation for the evaluator.
 
 ## Submission Materials
 
@@ -79,9 +78,15 @@ The submission includes:
 
 ```text
 scenario-14-2048/
-├── README.md
-├── requirements.txt
-├── main.py
-├── game.py
-└── board.py
+        |    videos/
+        │   ├── before.mp4
+        │   └── after.mp4
+        ├── source-code/
+        │   ├── board.py
+        │   ├── game.py
+        │   ├── main.py
+        │   └── requirements.txt
+        ├── Chat_History.pdf
+        ├── README.md
+        └── GitHub_Link.txt
 ```
